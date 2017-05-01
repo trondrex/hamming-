@@ -7,20 +7,26 @@
     //  Armenia, Quindio 30 de abril de 2017
     //  #FreeSoftware.
 
-#include <stdio.h>
-#include <string.h>
+#include "Clasehamm.h"
+
+Clasehamm hamming;
+
 int main()
 {
     char mensaje[20];
-    int aux,i=0;
+    int aux,i=0,size;
 
     printf("ingrese el mensaje : ");
-    scanf("%s",&mensaje);
+    gets(mensaje);
+    size=strlen(mensaje);
 
     for(i=0;i<strlen(mensaje);i++)
+        
         {
-            aux=mensaje[i];
-            printf("%d \n",aux);
+            hamming.setConvert(mensaje[i],128);
+            hamming.Paridad(1);
+           // aux=hamming.getConvert();
+           // printf("%d \n",aux);
     
         }
 
