@@ -9,7 +9,6 @@ Clasehamm::Clasehamm()
 void Clasehamm::setConvert(char char_ref,unsigned int conta)
 {
 
-    printf("\n");
     i=0;
     for(conta;conta>0;conta>>=1)
    { 
@@ -33,13 +32,12 @@ void Clasehamm::setConvert(char char_ref,unsigned int conta)
 
 void Clasehamm::Paridad(unsigned int conta)
 {
-    
+sum=0; 
 unsigned int comparador=3;
-
 for(conta; conta < 9; conta<<=1)
 {
-    printf("\n");
     i=0;
+    aux=0;
     comparador=3;
     for(comparador;comparador<=12;comparador++)
     {
@@ -48,31 +46,55 @@ for(conta; conta < 9; conta<<=1)
         
             if(conta & comparador)
             {
-                printf("%d",comparador);
+                aux += data_palabra[i];
             }
-            else
-            {
-                printf(" ");
 
-            }
-        
+            i++;
         }
+    }
+   if(aux%2==0)
+   {
+       paridad[sum]=0;
+   
+   }
+   else
+    {
+        paridad[sum]=1;
+    
+    }
+   sum++;
+}
 
-        else
-        {
-            printf(" ");
-        }
+}
 
-        i++;
+void Clasehamm::Codificacion()
+{
+sum=0;
+aux=0;
+for(i=0;i<12;i++)
+{
+    if(i==0 || i==1 || i==3 || i==7)
+    {
+        codif_palabra[i]=paridad[sum];
+        sum++;  
+    }
+    else
+    {
+        codif_palabra[i]=data_palabra[aux];
+        aux++;
     }
 
-
 }
 
-
+for(i=0;i<12;i++)
+{
+    printf("%d",codif_palabra[i]);
 }
 
+printf("\n");
 
+
+}
 
 
 
@@ -81,7 +103,7 @@ for(conta; conta < 9; conta<<=1)
 int Clasehamm::getConvert()
 {
 
-    return dec;
+
 }
 
 

@@ -25,6 +25,7 @@ int main()
         {
             hamming.setConvert(mensaje[i],128);
             hamming.Paridad(1);
+            hamming.Codificacion();
            // aux=hamming.getConvert();
            // printf("%d \n",aux);
     
