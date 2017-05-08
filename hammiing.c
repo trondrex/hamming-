@@ -14,11 +14,10 @@ Clasehamm hamming;
 int main()
 {
     char mensaje[20];
-    int aux,i=0,size;
+    int control=0,i;
 
     printf("ingrese el mensaje : ");
     gets(mensaje);
-    size=strlen(mensaje);
 
     for(i=0;i<strlen(mensaje);i++)
         
@@ -26,8 +25,15 @@ int main()
             hamming.setConvert(mensaje[i],128);
             hamming.Paridad(1);
             hamming.Codificacion();
-           // aux=hamming.getConvert();
-           // printf("%d \n",aux);
+            hamming.Sincronizacion();
+//termina la codificacion 
+            
+            hamming.dec_error(1);
+            hamming.det_error();
+            hamming.dec_setMensaje();
+             
+            
+            printf("\n");
     
         }
 
