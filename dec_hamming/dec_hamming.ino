@@ -16,7 +16,9 @@ volatile int codif_palabra[12];
 void setup()
 {
   Serial.begin(9600);
-  
+  //delay(1000);
+  //Serial.print("Establecida comunicaacion con el receptor . . .");
+  //Serial.println(" ");
   attachInterrupt(1,cambio,FALLING);
   attachInterrupt(3,cambio2,FALLING);    
 }

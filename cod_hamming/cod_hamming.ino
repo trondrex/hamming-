@@ -18,7 +18,9 @@ void setup()
   pinMode(3,OUTPUT);
   Serial.begin(9600);
   digitalWrite(3,HIGH);
-  
+  //delay(1000);
+  //Serial.print("Establecida comunicaacion con el transmisor . . .");
+  //Serial.println(" ");
 }
 
 void loop()
