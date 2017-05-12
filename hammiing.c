@@ -15,7 +15,9 @@ int main()
 {
     char mensaje[20];
     int control=0,i;
-
+    clock_t start,end;
+    double cpu_time_used;
+    start=clock();
     printf("ingrese el mensaje : ");
     gets(mensaje);
 
@@ -38,7 +40,10 @@ int main()
         }
 
 
-
+    end=clock();
+    cpu_time_used=((double)(end - start))/CLOCKS_PER_SEC;
+    printf("tiempo invertido igual a %lf \n",cpu_time_used);
 
 
 }
+
